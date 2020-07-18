@@ -16,13 +16,13 @@
         <div class="container">
 
             <a href="#" class="brand-logo">
-            	<img src="../images/LOGO2-01.png" alt="" class="responsive-img" style="height: 30px;" >
+                <img src="../images/LOGO2-01.png" alt="" class="responsive-img" style="height: 30px;" >
             </a>
-            <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul> -->
+            <ul id="nav-mobile" class="right">
+                <!-- <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li> -->
+                <li><a href="collapsible.html" class="red-text">Logout</a></li>
+            </ul>
             </div>
 
         </div>
