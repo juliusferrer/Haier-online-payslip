@@ -60,7 +60,7 @@
 									</div><br>
 
 									<div class="form-field">
-										<button class="btn-large blue darken-4 waves-effect waves-dark" style="width:100%;">Login</button>
+										<button class="btn blue darken-4 waves-effect waves-dark" style="width:100%;">Login</button>
 									</div><br>
 								</div>
 
