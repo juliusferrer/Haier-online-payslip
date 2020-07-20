@@ -32,14 +32,14 @@
     <div class="row">
         <div class="container">
 
-        		<h3 class="center">Haier Online Payslip</h1>
+        		<h4 class="center">Haier Online Payslip</h1>
 
 					<div class="row">
 						<div class="col s12 m10 l6 offset-m2 offset-l3">
 							<div class="card">
 
 								<div class="card-action lighten-1 white-text">
-									<<img src="images/header2-01.png" alt="" height="120">
+									<<img src="images/header2-01.png" alt="" class="responsive-img" height="120">
 								</div>
 
 								<div class="card-content">
