@@ -1,3 +1,5 @@
+<?php require_once('login.php')?>
+
 <!-- haier -->
 <!DOCTYPE html>
 <html lang="en">
@@ -42,27 +44,47 @@
 									<<img src="images/header2-01.png" alt="" class="responsive-img" height="120">
 								</div>
 
-								<div class="card-content">
-									<!-- <div class="form-field">
-										<label for="username">Username</label>
-										<input type="text" id="username">
-									</div><br> -->
+								<form action="login.php" method="post">
 
-									<div class="form-field">
-										<label for="password">Employee ID</label>
-										<input type="password" id="password">
-									</div><br>
-
-									<div class="form-field">
-										<input type="checkbox" id="remem">
-										<!-- <label for="remem">Rememeber me</label> -->
+									<div class="card-content">
 										
-									</div><br>
+										<div class="form-field">
+											<label for="employeeID">Employee ID</label>
+											<input type="text" id="employeeID" name="employeeID">
+										</div><br>
 
-									<div class="form-field">
-										<button class="btn blue darken-4 waves-effect waves-dark" style="width:100%;">Login</button>
-									</div><br>
-								</div>
+										<div class="form-field">
+											<label for="password">Password</label>
+											<input type="password" id="password" name="password">
+										</div><br>
+
+										<div class="form-field">
+											<input type="checkbox" id="remem">
+											<!-- <label for="remem">Rememeber me</label> -->
+											
+										</div>
+
+										<?php 
+											if(isset($_SESSION["auth-msg"])):
+										?>
+
+							<span class="red-text">
+									<?php
+									 echo $_SESSION["auth-msg"];
+									 unset($_SESSION["auth-msg"]);
+									 ?>
+							    </span>
+
+							<?php endif;?>
+
+										<br>
+
+										<div class="form-field">
+											<button type="submit" name="login" class="btn blue darken-4 waves-effect waves-dark" style="width:100%;">Login</button>
+										</div><br>
+									</div>
+
+							    </form>
 
 							</div>
 						</div>
