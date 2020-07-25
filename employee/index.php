@@ -34,7 +34,7 @@
 <div class="container" >
 <br>
 <img class="responsive-img " src="../images/header-01.png" alt=""> 
-<h5 class="center"> Welcome to Online Payslip</h2> 
+<h5 class="center"> Welcome Juan Dela Cruz! </h2> 
 
 </div>
 
