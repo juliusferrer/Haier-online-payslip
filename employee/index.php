@@ -29,53 +29,52 @@
         </div>
   </nav>
 
+    <section>
+
+            <div class="container" >
+            <br>
+            <img class="responsive-img " src="../images/header-01.png" alt=""> 
+            <br>
+            <h5 class="center"> Welcome Juan Dela Cruz! </h2>    
+             <div class="divider"></div>
+            </div>
+           
+            <br>
+
+    </section>
+   
+<br>  
+   
   <section>
+        <div class="container grey lighten-5">
 
-<div class="container" >
-<br>
-<img class="responsive-img " src="../images/header-01.png" alt=""> 
-<h5 class="center"> Welcome Juan Dela Cruz! </h2> 
+        <table class="highlight responsive-table centered z-depth-4">
+        <thead class="light-blue darken-5"> 
+          <tr class="white-text ">
+              <th>Pay Period</th>
+              <th>Action</th>
+              <th>Net Pay</th>
+          </tr>
+        </thead>
 
-</div>
+        <tbody>
+          <tr>
+            <td>07/01/2020 - 07/15/2020</td>
+            <td><a href="">View Details</a></td>
+            <td>25,000</td>
+          </tr>
+          <tr>
+            <td>07/16/2020 - 07/31/2020</td>
+            <td><a href="">View Details</a></td>
+            <td>25,000</td>
+          </tr>
+          <tr>
+            <td>08/01/2020 - 01/15/2020</td>
+            <td><a href="">View Details</a></td>
+            <td>25,000</td>
+          </tr>
+        </tbody>
+      </table>
 
-</section>
-
-<section>
-<div class="container">
-
-<table class="highlight responsive-table centered teal lighten-2">
-<thead>
-<tr>
-  <th>Pay Period</th>
-  <th>Action</th>
-  <th>Net Pay</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>07/01/2020 - 07/15/2020</td>
-<td><a href="">View Details</a></td>
-<td>25,000</td>
-</tr>
-<tr>
-<td>07/16/2020 - 07/31/2020</td>
-<td><a href="">View Details</a></td>
-<td>25,000</td>
-</tr>
-<tr>
-<td>08/01/2020 - 01/15/2020</td>
-<td><a href="">View Details</a></td>
-<td>25,000</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</section>
-
-	<!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-</body>
-</html>
+        </div>
+  <
