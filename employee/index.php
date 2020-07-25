@@ -43,7 +43,7 @@
 <section>
 <div class="container">
 
-<table class="highlight responsive-table centered">
+<table class="highlight responsive-table centered teal lighten-2">
 <thead>
 <tr>
   <th>Pay Period</th>
