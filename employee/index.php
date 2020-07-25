@@ -29,7 +29,50 @@
         </div>
   </nav>
 
+  <section>
 
+<div class="container" >
+<br>
+<img class="responsive-img " src="../images/header-01.png" alt=""> 
+<h5 class="center"> Welcome to Online Payslip</h2> 
+
+</div>
+
+</section>
+
+<section>
+<div class="container">
+
+<table class="highlight responsive-table centered">
+<thead>
+<tr>
+  <th>Pay Period</th>
+  <th>Action</th>
+  <th>Net Pay</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>07/01/2020 - 07/15/2020</td>
+<td><a href="">View Details</a></td>
+<td>25,000</td>
+</tr>
+<tr>
+<td>07/16/2020 - 07/31/2020</td>
+<td><a href="">View Details</a></td>
+<td>25,000</td>
+</tr>
+<tr>
+<td>08/01/2020 - 01/15/2020</td>
+<td><a href="">View Details</a></td>
+<td>25,000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
 
 	<!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
