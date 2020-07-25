@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 20, 2020 at 03:36 PM
+-- Generation Time: Jul 25, 2020 at 09:29 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -30,8 +30,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `employees` (
   `id` int(11) NOT NULL,
-  `employee` varchar(255) NOT NULL
+  `employee` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `employee`, `password`) VALUES
+(2, 'employee_id002', '92e9b3e4e9888369b3ecbb18efa8101ca0d3478b'),
+(4, 'employee_id001', 'abe7a3e0e032dc19b30115c96facabd03ee7fc8c');
 
 -- --------------------------------------------------------
 
@@ -41,20 +50,28 @@ CREATE TABLE `employees` (
 
 CREATE TABLE `employee_record` (
   `id` int(11) NOT NULL,
-  `employee_id` varchar(255) NOT NULL,
+  `employee_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
   `middleName` varchar(255) NOT NULL,
   `payPeriod` varchar(255) NOT NULL,
-  `basicPay` int(11) NOT NULL,
-  `overtimePeriod` int(11) NOT NULL,
-  `incentives` int(11) NOT NULL,
-  `sssContribution` int(11) NOT NULL,
-  `phicContribution` int(11) NOT NULL,
-  `hdmfContribution` int(11) NOT NULL,
-  `pagIbigContribution` int(11) NOT NULL,
-  `sssLoan` int(11) NOT NULL
+  `basicPay` varchar(255) NOT NULL,
+  `overtimePeriod` varchar(255) NOT NULL,
+  `incentives` varchar(255) NOT NULL,
+  `sssContribution` varchar(255) NOT NULL,
+  `phicContribution` varchar(255) NOT NULL,
+  `hdmfContribution` varchar(255) NOT NULL,
+  `pagIbigContribution` varchar(255) NOT NULL,
+  `sssLoan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employee_record`
+--
+
+INSERT INTO `employee_record` (`id`, `employee_id`, `name`, `lastName`, `middleName`, `payPeriod`, `basicPay`, `overtimePeriod`, `incentives`, `sssContribution`, `phicContribution`, `hdmfContribution`, `pagIbigContribution`, `sssLoan`) VALUES
+(1, 2, 'John', 'Doe', 'Bill', '', '', '', '', '', '', '', '', ''),
+(2, 4, 'Juan ', 'Cruz', 'Dela', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -104,13 +121,13 @@ ALTER TABLE `total_income`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `employee_record`
 --
 ALTER TABLE `employee_record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `total_income`
