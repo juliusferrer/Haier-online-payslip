@@ -86,7 +86,7 @@
             while($row = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
                echo '<tr>';
                   echo '<td>&nbsp;'.$row['payPeriod'].'</td>';
-                  echo '<td>&nbsp;<a href="payslip.php?id='.$row['id'].'"></td>';
+                  echo '<td>&nbsp;<a href="payslip.php?employee_id='.$row['employee_id'].'&payPeriod='.$row['payPeriod'].'">View Details</td>';
                   echo '<td>&nbsp;'.$row['netPay'].'</td>';
               
                   echo '</tr>';
