@@ -47,40 +47,6 @@
    
 <br>  
    
-  <!-- <section>
-        <div class="container grey lighten-5">
-
-        <table class="highlight responsive-table centered z-depth-4">
-        <thead class="light-blue darken-5"> 
-          <tr class="white-text ">
-              <th>Pay Period</th>
-              <th>Action</th>
-              <th>Net Pay</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>07/01/2020 - 07/15/2020</td>
-            <td><a href="">View Details</a></td>
-            <td>25,000</td>
-          </tr>
-          <tr>
-            <td>07/16/2020 - 07/31/2020</td>
-            <td><a href="">View Details</a></td>
-            <td>25,000</td>
-          </tr>
-          <tr>
-            <td>08/01/2020 - 01/15/2020</td>
-            <td><a href="">View Details</a></td>
-            <td>25,000</td>
-          </tr>
-        </tbody>
-      </table>
-
-        </div>
-  </section> -->
-
   
 	
     <section>
