@@ -33,7 +33,14 @@ if(isset($_POST["login"])){
                 $member = mysqli_fetch_assoc($result);
                 $_SESSION['SESS_MEMBER_ID'] = $member['id'];
                 session_write_close();
-                header("location: employee/index.php");
+
+        //Check if the user who authenticate has a status of 1 in isChangePass column
+                if($member['isChangePass'] == 1){
+                     header("location: employee/index.php");
+                }
+                else {
+                         header("location: employee/changePass.php");
+                }
 
                 exit();
 
