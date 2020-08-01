@@ -1,7 +1,7 @@
 <?php 
   include("../connect.php");
   include("../auth.php");
-  include("./view_summary.php");
+  // include("./view_summary.php");
  
 
 # For authentication, To verfiy who is the user who logged in
@@ -14,9 +14,10 @@
     $fname = $row["name"];
     $lname = $row["lastName"];
     $mname = $row["middleName"];
-  }
 
-  
+    $payPeriod = $row['payPeriod'];
+    $netPay = $row['netPay'];
+  }
   
 
 ?>
@@ -80,13 +81,11 @@
         </thead>
 
         <tbody>
-        <?php do{ ?>
           <tr>
-            <td><?php echo $row['payPeriod'];?></td>
+            <td><?= $payPeriod ;?></td>
             <td><a href="payslip_details.php">View Details</a></td>
-            <td><?php echo $row['netPay'];?></td>
+            <td><?= $netPay ;?></td>
           </tr>
-        <?php }while($row = $queryEmployeeRecord->fetch_assoc()); ?>
         </tbody>
       </table>
 
