@@ -1,7 +1,8 @@
 <?php 
-
   include("../connect.php");
   include("../auth.php");
+  include("./view_summary.php");
+ 
 
 # For authentication, To verfiy who is the user who logged in
 
@@ -14,6 +15,8 @@
     $lname = $row["lastName"];
     $mname = $row["middleName"];
   }
+
+  
   
 
 ?>
@@ -77,21 +80,13 @@
         </thead>
 
         <tbody>
+        <?php do{ ?>
           <tr>
-            <td>07/01/2020 - 07/15/2020</td>
-            <td><a href="">View Details</a></td>
-            <td>25,000</td>
+            <td><?php echo $row['payPeriod'];?></td>
+            <td><a href="payslip_details.php">View Details</a></td>
+            <td><?php echo $row['netPay'];?></td>
           </tr>
-          <tr>
-            <td>07/16/2020 - 07/31/2020</td>
-            <td><a href="">View Details</a></td>
-            <td>25,000</td>
-          </tr>
-          <tr>
-            <td>08/01/2020 - 01/15/2020</td>
-            <td><a href="">View Details</a></td>
-            <td>25,000</td>
-          </tr>
+        <?php }while($row = $queryEmployeeRecord->fetch_assoc()); ?>
         </tbody>
       </table>
 
