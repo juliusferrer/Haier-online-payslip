@@ -15,8 +15,6 @@
     $lname = $row["lastName"];
     $mname = $row["middleName"];
 
-    $payPeriod = $row['payPeriod'];
-    $netPay = $row['netPay'];
   }
   
 
@@ -81,11 +79,19 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td><?= $payPeriod ;?></td>
-            <td><a href="payslip_details.php">View Details</a></td>
-            <td><?= $netPay ;?></td>
-          </tr>
+          <?php
+          include('../connect.php');
+            $qry2 = "SELECT * FROM employee_record WHERE id='$id' ORDER BY ID DESC" or die (mysqli_error());
+              $result2 = mysqli_query($mysqli, $qry);
+            while($row = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
+               echo '<tr>';
+                  echo '<td>&nbsp;'.$row['payPeriod'].'</td>';
+                  echo '<td>&nbsp;<a href="payslip.php?id='.$row['id'].'"></td>';
+                  echo '<td>&nbsp;'.$row['netPay'].'</td>';
+              
+                  echo '</tr>';
+            }
+          ?>
         </tbody>
       </table>
 
