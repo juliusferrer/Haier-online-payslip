@@ -11,6 +11,7 @@
   $result = mysqli_query($mysqli, $qry);
 
   while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
     $fname = $row["name"];
     $lname = $row["lastName"];
     $mname = $row["middleName"];
@@ -81,8 +82,9 @@
         <tbody>
           <?php
           include('../connect.php');
-            $qry2 = "SELECT * FROM employee_record WHERE id='$id' ORDER BY ID DESC" or die (mysqli_error());
-              $result2 = mysqli_query($mysqli, $qry);
+
+            $qry2 = "SELECT * FROM employee_record WHERE employee_id='$id' ORDER BY payPeriod DESC" or die (mysqli_error());
+            $result2 = mysqli_query($mysqli, $qry2);
             while($row = mysqli_fetch_array($result2, MYSQLI_ASSOC)){
                echo '<tr>';
                   echo '<td>&nbsp;'.$row['payPeriod'].'</td>';
@@ -103,7 +105,7 @@
 	<!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-      var i = <?php echo $fname;?>;
+      var i = <?php echo $id;?>;
 
       console.log(i)
 
