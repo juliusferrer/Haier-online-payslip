@@ -28,7 +28,7 @@ if(isset($_POST["login"])){
     // This condition is for the PHP to set a SESSIOn id for the user who's logging in 
 
         if($result){
-            if(mysqli_num_rows($result) > 0){
+            if(mysqli_num_rows($result) > 0) {
                 session_regenerate_id();
                 $member = mysqli_fetch_assoc($result);
                 $_SESSION['SESS_MEMBER_ID'] = $member['id'];
