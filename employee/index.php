@@ -107,7 +107,7 @@
     <script>
       var i = <?php echo $id;?>;
 
-      console.log(i)
+      // console.log(i)
 
     </script>
 </body>
