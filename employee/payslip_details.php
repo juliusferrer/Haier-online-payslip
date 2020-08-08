@@ -1,3 +1,22 @@
+<?php 
+  include("../connect.php");
+  $id = $_GET['employee_id'];
+  $qry3 = "SELECT * FROM employee_record WHERE employee_id = '$id'" or die (mysqli_error());
+  $result = mysqli_query($mysqli, $qry3);
+
+  while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
+    $fname = $row["name"];
+    $lname = $row["lastName"];
+    $mname = $row["middleName"];
+    $emp_id = $row['employee_id'];
+
+  }
+  $id2 = $_GET['id'];
+  $sqlRecord_employee = "SELECT * FROM employee_record WHERE id = '$id2' ORDER BY payPeriod DESC" or die (mysqli_error());
+  $queryEmployee_Record = $mysqli->query($sqlRecord_employee) or die (mysqli_error());
+  $row = $queryEmployee_Record->fetch_assoc();
+  ?>
 <!-- test -->
 <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +28,14 @@
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" type="text/css" href="">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <style>
+     body {
+      font-size: 12px;
+     }
+
+     table {}
+     
+     </style>
 </head>
 
 
@@ -24,7 +51,7 @@
             <ul id="nav-mobile" class="right">
                 <!-- <li><a href="sass.html">Sass</a></li>
                 <li><a href="badges.html">Components</a></li> -->
-                <li><a href="collapsible.html" class="red-text">Logout</a></li>
+                <li><a href="logout.php" class="red-text">Logout</a></li>
             </ul>
             </div>
 
@@ -37,7 +64,7 @@
             <br>
             <img class="responsive-img " src="../images/header-01.png" alt=""> 
             <br>
-            <h5 class="center"> Welcome Juan Dela Cruz! </h2>    
+            <h5 class="center"> Welcome <?php echo $fname." ".$mname." ".$lname; ?> </h2>    
              <div class="divider"></div>
             </div>
            
@@ -46,49 +73,47 @@
     </section>
    
 <br>  
-   
-  
-	
-    <section>
+    <section  >
 
-    <div class="container grey lighten-5 z-depth-2">
+    <div  class="container grey lighten-5 z-depth-2">
    
   
-    <div class="table-responsive">
+    <div class="table-responsive text-font">
     
 
-        <div class="row">
+        <div class="row" id="printableArea">
 
-        <div class="col m6 s12">
+        <div class="col m6 s12" >
         <table class="highlight responsive-table">
       
             <tbody>
+          
            <p>  HAIER ELECTRICAL APPLIANCES PHILIPPINES, INC</p> 
             <tr>
                 <th>Department:</th>
-                <td>Marketing</td>
+                <td><?php echo $row['department']; ?></td>
               </tr>
 
               <tr>
                 <th>Employee Name:</th>
-                <td>DELA CRUZ, JUAN M. - 0357</td>
+                <td><?php echo $lname." ".$fname." - ".$emp_id; ?></td>
               </tr>
 
               <tr>
                 <th> Basic Pay</th>
-                <td>P8166.88</td>
+                <td><?php echo $row['basicPay']; ?></td>
               </tr>
 
               <tr>
                  <th>Overtime Pay</th>
-                <td>671.25</td>
+                <td><?php echo $row['overtimePeriod']; ?></td>
               </tr>
               
               <tr>
                  <th>INCENTIVES</th>
-                <td>1,502.2</td>
+                <td><?php echo $row['incentives']; ?></td>
               </tr>
-
+              
               
             </tbody>
 
@@ -101,33 +126,35 @@
 
             <tbody>
             <p>  Proof Sheet - Trial Computation</p> 
+
+            
             <tr>
-                <th>July - Pay Period</th>
-                <td>07/01/2020 to 07/15/2020</td>
+                <th>Pay Period</th>
+                <td><?php echo $row['payPeriod']; ?></td>
               </tr>
               <tr>
                 <th>SSS Contribution</th>
-                <td>420.00</td>
+                <td><?php echo $row['sssContribution'].".00"; ?></td>
               </tr>
 
               <tr>
                 <th>PHIC Contribution</th>
-                <td>150.00</td>
+                <td><?php echo $row['phicContribution'].".00"; ?></td>
               </tr>
 
               <tr>
                 <th>HDMF Contribution</th>
-                <td>100.00</td>
+                <td><?php echo $row['hdmfContribution'].".00"; ?></td>
               </tr>
 
               <tr>
                 <th>SSS LOAN</th>
-                <td>0.00</td>
+                <td><?php echo $row['sssLoan']; ?></td>
               </tr>
 
               <tr>
                 <th>PAG-IBIG LOAN</th>
-                <td>475.00</td>
+                <td><?php echo $row['pagIbigContribution']; ?></td>
               </tr>
 
             
@@ -135,7 +162,7 @@
         </table>
         
         </div>
-        <br>
+        <!-- <br>
         <div class="fluid">
         <div class="row">
         <div class="col s12">
@@ -143,36 +170,36 @@
         <div class="divider"></div>
         </div>
         </div>
-        </div>
+        </div> -->
 
 
         <div class="col m6 s12">
-        <table class="highlight responsive-table"> 
+        <table class="highlight responsive-table left">
+
+            <tbody> 
           
             <tr class="total">
                 <th>Total Income:</th>
-                <td>10,340.84</td>
+                <td><?php echo $row['total_Income']; ?></td>
               </tr>
 
               <tr>
                  <th>Undertime/Late</th>
-                <td>0:00</td>
+                <td style="font-size:12px; padding-right:90px;"><?php echo $row['undertime/late'].".00"; ?></td>
               </tr>
               
 
               <tr>
                  <th>OTRegular</th>
-                <td>0:00</td>
+                <td><?php echo $row['otreg'].".00"; ?></td>
               </tr>
 
               <tr>
                  <th>Night Diff.</th>
-                <td>0:00</td>
+                <td><?php echo $row['nightDiff'].".00"; ?></td>
               </tr>
             
-                  
-            
-            </tfoot>
+          </tbody>
         </table>
 
         </div>
@@ -182,23 +209,23 @@
           
             <tr class="total">
                 <th>Total Deduction:</th>
-                <td>1,145.00</td>
+                <td><?php echo $row['totalDeductions'].".00"; ?></td>
               </tr>
 
               <tr>
-                 <th>Net Pay:</th>
-                <td>9,195</td>
+                 <th class="left">Net Pay:</th>
+                <td class="" style="font-size:12px; padding-right:109px;"><?php echo $row['netPay']; ?></td>
               </tr>
               
 
               <tr>
                  <th>OT SUN:</th>
-                <td>0:00</td>
+                <td style="font-size:12px; padding-right:100px;"><?php echo $row['otsun'].".00"; ?></td>
               </tr>
 
               <tr>
                  <th>OT LEGAL HOLIDAY:</th>
-                <td>0:00</td>
+                <td><?php echo $row['otLegalHoliday'].".00"; ?></td>
               </tr>
 
               <tr>
@@ -211,25 +238,6 @@
         </div>
         
 
-        <!-- <div class="col s12">
-            <table>
-            <tr>
-            <td><a href="">View Details</a></td>
-            </tr>
-        </table>
-        </div> -->
-       
-        <!-- <div class="fluid">
-            <div class="row">
-                 <div class="col s12">
-
-                
-            <br>
-            <br>
-                 <div class="divider"></div>
-                </div>
-             </div>
-        </div> -->
       
     </div>
 
@@ -239,8 +247,8 @@
     </div>
     </div>
     <div class="container">
-        <button class="btn blue darken-4 waves-effect waves-dark" style="width:100%;">PRINT / VIEW PAYSLIP</button>
-    
+        <button class="btn blue darken-4 waves-effect waves-dark" style="width:100%;" type="button" onclick="printDiv('printableArea')" value="PRINT / VIEW PAYSLIP">PRINT / VIEW PAYSLIP</button>
+        <!-- <input class="btn blue darken-4 waves-effect waves-dark " style="width:100%;" type="button" onclick="printDiv('printableArea')" value="PRINT / VIEW PAYSLIP" /> -->
     </div>
 
     </section>
@@ -248,6 +256,20 @@
 
 
 	<!-- Compiled and minified JavaScript -->
+  <script>
+  function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+
+     
+}
+  </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
